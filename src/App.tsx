@@ -96,11 +96,16 @@ export default function App() {
             >
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative bg-stone-200">
                 <div className="absolute inset-0 bg-navy-900/10 z-10"></div>
+                {/* 
+                  ملاحظة: قمت بتغيير مسار الصورة إلى /yasmeen.jpg
+                  يرجى رفع صورة المحامية الحقيقية إلى مجلد public وتسميتها yasmeen.jpg
+                */}
                 <img 
                   src="/yasmeen.jpg" 
                   alt="المحامية ياسمين الطيار" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
+                    // Fallback image if the user hasn't uploaded their image yet
                     (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000";
                   }}
                 />
@@ -243,63 +248,6 @@ export default function App() {
                 <div className="text-sm text-stone-500 mt-1">نفخر بثقة موكلينا</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Instagram Section */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <Instagram className="w-8 h-8 text-pink-500" />
-                <h2 className="text-3xl font-bold text-navy-900">تابعونا على انستغرام</h2>
-              </div>
-              <p className="text-stone-600 text-lg max-w-2xl">
-                ابقوا على اطلاع دائم بأحدث الاستشارات القانونية والنصائح من خلال متابعة حسابنا الرسمي.
-              </p>
-            </div>
-            <a 
-              href={instagramLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90 text-white px-6 py-3 rounded-full transition-opacity font-medium shadow-md shrink-0"
-            >
-              <span dir="ltr">@lawyer.yasmeenaltayyar</span>
-              <ArrowLeft className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-
-        {/* Carousel */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            {[
-              "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600",
-              "https://images.unsplash.com/photo-1505664173691-a28166c15150?auto=format&fit=crop&q=80&w=600",
-              "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80&w=600",
-              "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600",
-              "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&q=80&w=600",
-            ].map((img, idx) => (
-              <a 
-                key={idx}
-                href={instagramLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative shrink-0 w-72 sm:w-80 aspect-square rounded-2xl overflow-hidden group snap-center shadow-md hover:shadow-xl transition-all"
-              >
-                <img 
-                  src={img} 
-                  alt={`Instagram post ${idx + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/40 transition-colors flex items-center justify-center">
-                  <Instagram className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity transform scale-50 group-hover:scale-100 duration-300" />
-                </div>
-              </a>
-            ))}
           </div>
         </div>
       </section>
