@@ -96,16 +96,11 @@ export default function App() {
             >
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative bg-stone-200">
                 <div className="absolute inset-0 bg-navy-900/10 z-10"></div>
-                {/* 
-                  ملاحظة: قمت بتغيير مسار الصورة إلى /yasmeen.jpg
-                  يرجى رفع صورة المحامية الحقيقية إلى مجلد public وتسميتها yasmeen.jpg
-                */}
                 <img 
                   src="/yasmeen.jpg" 
                   alt="المحامية ياسمين الطيار" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    // Fallback image if the user hasn't uploaded their image yet
                     (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000";
                   }}
                 />
