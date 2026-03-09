@@ -52,81 +52,41 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-stone-50/80 via-stone-50/95 to-stone-50"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/10 text-gold-600 font-medium mb-6">
-                <Scale className="w-4 h-4" />
-                <span>مكتب محاماة واستشارات قانونية</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight mb-6">
-                نحو عدالة ناجزة <br/>
-                <span className="text-gold-500">وحقوق محفوظة</span>
-              </h1>
-              <p className="text-lg text-stone-600 mb-8 leading-relaxed max-w-xl">
-                نقدم خدمات قانونية متكاملة باحترافية وموثوقية عالية. نلتزم بالدفاع عن حقوق موكلينا وتقديم أفضل الاستشارات القانونية التي تضمن حماية مصالحهم.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl font-medium text-lg"
-                >
-                  احجز استشارتك
-                  <ArrowLeft className="w-5 h-5" />
-                </a>
-                <a 
-                  href={`tel:${phoneNumber}`}
-                  className="inline-flex items-center gap-2 bg-white hover:bg-stone-50 text-navy-900 border border-stone-200 px-8 py-4 rounded-full transition-all shadow-sm hover:shadow font-medium text-lg"
-                >
-                  <Phone className="w-5 h-5 text-gold-500" />
-                  <span dir="ltr">{phoneNumber}</span>
-                </a>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative bg-stone-200">
-                <div className="absolute inset-0 bg-navy-900/10 z-10"></div>
-                {/* 
-                  ملاحظة: قمت بتغيير مسار الصورة إلى /yasmeen.jpg
-                  يرجى رفع صورة المحامية الحقيقية إلى مجلد public وتسميتها yasmeen.jpg
-                */}
-                <img 
-                  src="/yasmeen.jpg" 
-                  alt="المحامية ياسمين الطيار" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback image if the user hasn't uploaded their image yet
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000";
-                  }}
-                />
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy-900/90 to-transparent p-8 z-20">
-                  <div className="flex items-center gap-4 text-white">
-                    <div className="w-16 h-16 rounded-full bg-gold-500 flex items-center justify-center shrink-0 shadow-lg">
-                      <Scale className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">المحامية ياسمين الطيار</h3>
-                      <p className="text-gold-400 font-medium">خبرة وكفاءة في العمل القانوني</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-gold-500/10 rounded-full blur-2xl -z-10"></div>
-              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-navy-900/10 rounded-full blur-2xl -z-10"></div>
-            </motion.div>
-          </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/10 text-gold-600 font-medium mb-6">
+              <Scale className="w-4 h-4" />
+              <span>مكتب محاماة واستشارات قانونية</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-navy-900 leading-tight mb-6">
+              نحو عدالة ناجزة <br/>
+              <span className="text-gold-500">وحقوق محفوظة</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-stone-600 mb-10 leading-relaxed max-w-2xl text-center">
+              نقدم خدمات قانونية متكاملة باحترافية وموثوقية عالية. نلتزم بالدفاع عن حقوق موكلينا وتقديم أفضل الاستشارات القانونية التي تضمن حماية مصالحهم.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href="#contact"
+                className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl font-medium text-lg"
+              >
+                احجز استشارتك
+                <ArrowLeft className="w-5 h-5" />
+              </a>
+              <a 
+                href={`tel:${phoneNumber}`}
+                className="inline-flex items-center gap-2 bg-white hover:bg-stone-50 text-navy-900 border border-stone-200 px-8 py-4 rounded-full transition-all shadow-sm hover:shadow font-medium text-lg"
+              >
+                <Phone className="w-5 h-5 text-gold-500" />
+                <span dir="ltr">{phoneNumber}</span>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
